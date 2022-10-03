@@ -1,4 +1,4 @@
-// import { Error, Loader, SongCard } from "../Components";
+import { Error, Loader, SongCard } from "../Components";
 import { genres } from "../assets/constants";
 
 import React from "react";
@@ -22,6 +22,11 @@ const Discover = () => {
             </option>
           ))}
         </select>
+      </div>
+      <div className="flex flex-wrap sm:justify-start justify-center gap-8">
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((song, i) => (
+          <SongCard key={song?.key} value={song} song={song} i={i} />
+        ))}
       </div>
     </div>
   );
