@@ -1,4 +1,4 @@
-import { Error, Loader, SongCard } from "../Components";
+// import { Error, Loader, SongCard } from "../Components";
 import { genres } from "../assets/constants";
 
 import React from "react";
@@ -17,7 +17,9 @@ const Discover = () => {
           className="bg-black text-gray-300 p-3 text-sm rounded-lg outline-none sm:mt-0 mt-5"
         >
           {genres.map((genre) => (
-            <option>{genre.title}</option>
+            <option key={genre.value} value={genre.value}>
+              {genre.title}
+            </option>
           ))}
         </select>
       </div>
