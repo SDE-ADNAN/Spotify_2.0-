@@ -24,9 +24,9 @@ export const shazamCoreApi = createApi({
       );
       // headers.set("X-RapidAPI-Host","shazam-core.p.rapidapi.com"),
     },
-    endpoints: (builder) => ({
-      getTopCharts: builder.query({ query: "/charts/world" }),
-    }),
+  }),
+  endpoints: (builder) => ({
+    getTopCharts: builder.query({ query: "/charts/world" }),
   }),
 });
 
