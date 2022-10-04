@@ -6,6 +6,12 @@ import { playPause, setActiveSong } from "../redux/features/playerSlice";
 
 const SongCard = ({ song, i }) => {
   const activeSong = "test";
+  const handlePauseClick = () => {
+    
+  };
+  const handlePlayClick = () => {
+
+  };
   return (
     <div className="flex flex-col w-[250px] p-4 bg-white/5 bg-opacity-80 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer">
       <div className="relative w-full h-56 group">
@@ -16,7 +22,10 @@ const SongCard = ({ song, i }) => {
               : "hidden"
           }`}
         >
-          <PlayPause></PlayPause>
+          <PlayPause song={song} 
+          handlePause={handlePauseClick}
+          handlePlay={handlePlayClick}
+          ></PlayPause>
         </div>
         <img alt="song_img" src={song.images?.coverart}></img>
       </div>
@@ -25,7 +34,13 @@ const SongCard = ({ song, i }) => {
           <Link to={`/songs/${song?.key}`}>{song.title}</Link>
         </p>
         <p className="text-sm truncate text-gray-300 mt-1">
-          <Link to={song.artists ?`/artists/${song?.artists[0]?.adamid}`:'top-artists'}>
+          <Link
+            to={
+              song.artists
+                ? `/artists/${song?.artists[0]?.adamid}`
+                : "top-artists"
+            }
+          >
             {song.subtitle}
           </Link>
         </p>
