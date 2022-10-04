@@ -18,6 +18,7 @@ const SongCard = ({ song, i }) => {
         >
           <PlayPause></PlayPause>
         </div>
+        <img alt="song_img" src={song.images?.coverart}></img>
       </div>
     </div>
   );
